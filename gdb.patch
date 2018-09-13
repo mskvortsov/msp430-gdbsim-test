@@ -1,0 +1,13 @@
+diff --git a/sim/msp430/msp430-sim.c b/sim/msp430/msp430-sim.c
+index 33d1460382..a2fa02e44d 100644
+--- a/sim/msp430/msp430-sim.c
++++ b/sim/msp430/msp430-sim.c
+@@ -987,7 +987,7 @@ maybe_perform_syscall (SIM_DESC sd, int call_addr)
+     {
+       /* Syscall!  */
+       int arg1, arg2, arg3, arg4;
+-      int syscall_num = call_addr & 0x3f;
++      int syscall_num = (call_addr & 0x3f) >> 1;
+ 
+       /* syscall_num == 2 is used for the variadic function "open".
+ 	 The arguments are set up differently for variadic functions.

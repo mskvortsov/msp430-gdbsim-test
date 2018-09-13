@@ -1,0 +1,16 @@
+Configure and build Clang:
+cmake \
+-DBUILD_SHARED_LIBS=1 \
+-DCMAKE_BUILD_TYPE=Debug \
+-DLLVM_DEFAULT_TARGET_TRIPLE=msp430-elf \
+-DLLVM_TARGETS_TO_BUILD=MSP430 \
+-DCLANG_ENABLE_STATIC_ANALYZER=0 \
+-DCLANG_ENABLE_ARCMT=0 \
+../llvm
+
+Configure and build GDB:
+patch -p1 <gdb.patch
+./configure --target=msp430-elf
+
+Run test:
+make && ./run.sh
