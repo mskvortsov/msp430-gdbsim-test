@@ -26,12 +26,12 @@
 
 #define sys_dump() ((void (*) (void))0x0160)()
 
-#define sys_exit(status) ((int (*) (int))0x0182)(status)
+#define sys_exit(status) ((int (*) (int))0x0181)(status)
 /* three zero arguments are here just to match gdb-sim calling convention: flags should be on stack */
-#define sys_open(pathname, flags) ((int (*) (char *, int, int, int, int))0x0184)(pathname, 0, 0, 0, flags)
-#define sys_close(fd) ((int (*) (int))0x0186)(fd)
-#define sys_read(fd, buf, count) ((int (*) (int, void *, int))0x0188)(fd, buf, count)
-#define sys_write(fd, buf, count) ((int (*) (int, void *, int))0x018a)(fd, buf, count)
+#define sys_open(pathname, flags) ((int (*) (char *, int, int, int, int))0x0182)(pathname, 0, 0, 0, flags)
+#define sys_close(fd) ((int (*) (int))0x0183)(fd)
+#define sys_read(fd, buf, count) ((int (*) (int, void *, int))0x0184)(fd, buf, count)
+#define sys_write(fd, buf, count) ((int (*) (int, void *, int))0x0185)(fd, buf, count)
 
 void *memcpy(void *, const void *, size_t);
 void *memset(void *, int, size_t);

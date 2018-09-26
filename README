@@ -8,8 +8,7 @@ cmake \
 -DCLANG_ENABLE_ARCMT=0 \
 ../llvm
 
-Configure and build GDB:
-patch -p1 <gdb.patch
+Configure and build binutils-gdb:
 ./configure --target=msp430-elf
 
 Run test:

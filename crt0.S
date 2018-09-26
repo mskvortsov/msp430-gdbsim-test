@@ -2,7 +2,8 @@
   .globl _start
 _start:
   ; set stack pointer to the last RAM word
-  ; should be in sync with memory.x linker map
-  mov #0x38fe, r1
+  ; note a push is pre-decrement on msp430
+  ; should be in sync with the linker script
+  mov #0x5000, r1
   call #main
-  call #386
+  call #385
