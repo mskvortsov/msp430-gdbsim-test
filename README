@@ -12,4 +12,4 @@ Configure and build binutils-gdb:
 ./configure --target=msp430-elf
 
 Run test:
-make && ./run.sh
+make
